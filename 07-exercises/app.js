@@ -76,7 +76,32 @@ const max = (numbers) => {
 // console.log(max([2,4,1,5,12,11,6,9]));
 
 const letterfrequency = (phrase) => {
-    
+
+    //initlise an empty objetc
+    let frequency = {}
+    for (const letter  of phrase){
+     //check if letter exists in frequency
+      if(letter in frequency) {
+        //increment the value by +1
+        frequency[letter] ++
+        //otherwise set the value to 1
+      }else{
+        frequency[letter] = 1
+      }
+    }
+    return frequency
 }
+
+//console.log(letterfrequency('hahahahahahahahaha'))
+
+const wordFrequency = (phrase) => {
+
+    const words = phrase.split(' ')
+    return letterfrequency(words)
+
+}
+
+const userInput = prompt('Write your sentence')
+console.log(wordFrequency(userInput));
 
 
