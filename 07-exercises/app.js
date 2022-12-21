@@ -101,7 +101,34 @@ const wordFrequency = (phrase) => {
 
 }
 
-const userInput = prompt('Write your sentence')
-console.log(wordFrequency(userInput));
+// const userInput = prompt('Write your sentence')
+// console.log(wordFrequency(userInput));
 
+/************************** Higher order numbers ****************************/
 
+//map
+
+/****** Map returns an array *******/
+const doubleMap = (numbers) => {
+let mapped = numbers.map(number => number * 2)
+console.log(mapped);
+}
+doubleMap([1,2,3]);
+
+//filter
+/*** filter returns sn array with mactching conditions */
+const nums = [1,2,3,4,5,6]
+
+let filtered = nums.filter(nums => nums > 4)
+console.log(filtered);
+
+const actors = [
+    {name: 'johnny', netWorth: 20000000},
+    {name: 'Ricky', netWorth: 100},
+    {name: 'Wayne', netWorth: 50000000},
+]
+
+let wealth = actors.filter(actors => actors.netWorth > 100)
+console.log(wealth);
+
+//reduce
