@@ -130,5 +130,12 @@ const actors = [
 
 let wealth = actors.filter(actors => actors.netWorth > 100)
 console.log(wealth);
+console.log(actors.reduce((a , b) => a + b.netWorth, 0));
 
 //reduce
+//reduce takes in a fuction as an argument
+//reduce loops and gives you back a the SUM of all values
+const numerals = [1,2,3,3,3,3]
+const result = numerals.reduce((a,b) => a + b )
+
+console.log(result);
