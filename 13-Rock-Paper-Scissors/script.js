@@ -13,9 +13,39 @@
 // ** getComputerChoice randomly selects between `rock` `paper` `scissors` and returns that string **
 // getComputerChoice() 👉 'Rock'
 // getComputerChoice() 👉 'Scissors'
+
+// const playerChoice = document.querySelectorAll('.rpsButton')
+
+// for(const choice of playerChoice){
+//      let play
+//      choice.addEventListener('click', function(event){
+//      console.log(choice.value);
+//      })
+// }
+
+
 function getComputerChoice() {
-  
+   let rock = 1
+   let paper = 2
+   let scissors = 3
+   let computerChoice
+
+   //get computer choice
+   let computerSelection = Math.trunc(Math.random()*3)+1;
+   
+   if (computerSelection === rock){
+       computerChoice = 'Rock'
+   }else if (computerSelection === paper){
+       computerChoice = 'Paper'
+   }else if( computerSelection === scissors){
+      computerChoice = 'Scissors'
+   }
+
+   return computerChoice
+
 }
+
+console.log(`The computer choice is : ${getComputerChoice()}`);
 
 // ** getResult compares playerChoice & computerChoice and returns the score accordingly **
 // human wins - getResult('Rock', 'Scissors') 👉 1
@@ -23,7 +53,7 @@ function getComputerChoice() {
 // human draws - getResult('Rock', 'Rock') 👉 0
 function getResult(playerChoice, computerChoice) {
   // return the result of score based on if you won, drew, or lost
-  
+    
   
 
   // All situations where human draws, set `score` to 0
