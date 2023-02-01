@@ -45,12 +45,6 @@ function getComputerChoice() {
 
 }
 
-console.log(`The computer choice is : ${getComputerChoice()}`);
-
-// ** getResult compares playerChoice & computerChoice and returns the score accordingly **
-// human wins - getResult('Rock', 'Scissors') 👉 1
-// human loses - getResult('Scissors', 'Rock') 👉 -1
-// human draws - getResult('Rock', 'Rock') 👉 0
 function getResult(playerChoice, computerChoice) {
   // return the result of score based on if you won, drew, or lost
   let score
@@ -76,6 +70,20 @@ function showResult(score, playerChoice, computerChoice) {
   // Hint: on a score of -1
   // You should do result.innerText = 'You Lose!'
   // Don't forget to grab the div with the 'result' id!
+  const resultDiv = document.getElementById('result')
+  const handsDiv = document.getElementById('hands')
+  const playerScore = document.getElementById('player-score')
+
+  if (score == -1){
+     resultDiv.innerHTML ='You Lose!!'
+  }else if (score == 0){
+     resultDiv.innerHTML ='Its a tie!1'
+  }else{
+      resultDiv.innerHTML = "You won!!"
+  }
+
+  handsDiv.innerText =`🧔${playerChoice} vs 💻${computerChoice}`
+  playerScore.innerText = `Player score is:${score}`
 }
 
 // ** Calculate who won and show it on the screen **
@@ -89,6 +97,7 @@ function onClickRPS(playerChoice) {
   totalScore['playerScore'] += score
   console.log({score});
   console.log({totalScore});
+  showResult(score,playerChoice,computerChoice)
  
 }
 
@@ -100,12 +109,23 @@ function playGame() {
    rpsButtons.forEach(rpsButtons => {
     rpsButtons.onclick = () => onClickRPS(rpsButtons.value)
    })
-  
+  const endGameButton = document.getElementById('endGameButton')
+  endGameButton.onclick = () => endGame(totalScore)
 }
 
 // ** endGame function clears all the text on the DOM **
-function endGame() {
-  
+function endGame(totalScore) {
+   
+  totalScore ['playerScore'] = 0
+  totalScore ['computerScore'] = 0
+
+  const resultDiv = document.getElementById('result')
+  const handsDiv = document.getElementById('hands')
+  const playerScore = document.getElementById('player-score')
+
+  resultDiv.innerText = ''
+  handsDiv.innerText = ''
+  playerScore.innerText = ''
 }
 
 playGame()
