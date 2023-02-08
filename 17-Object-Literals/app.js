@@ -1,8 +1,3 @@
-// const blogs = [
-//   { titile: "why mach and cheese rules", likes: 30 },
-//   { titile: "10 things you can make with marmite", likes: 50 },
-// ];
-
 let user = {
   name: "crystal",
   age: 30,
