@@ -1,9 +1,17 @@
+// const blogs = [
+//   { titile: "why mach and cheese rules", likes: 30 },
+//   { titile: "10 things you can make with marmite", likes: 50 },
+// ];
+
 let user = {
   name: "crystal",
   age: 30,
   email: "crystal@thenetninja.com",
   location: "berlin",
-  blogs: ["why mach and cheese rules", "10 things you can make with marmite"],
+  blogs: [
+    { title: "why mach and cheese rules", likes: 30 },
+    { title: "10 things you can make with marmite", likes: 50 },
+  ],
   login: function () {
     console.log("The user logged in");
   },
@@ -13,7 +21,7 @@ let user = {
   logBlogs() {
     console.log("this user has written the following blogs");
     this.blogs.forEach((blog) => {
-      console.log(blog);
+      console.log(blog.title, blog.likes);
     });
   },
 };
